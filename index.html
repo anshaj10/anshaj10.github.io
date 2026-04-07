@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hometown Career – Your Global Education Partner</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sky: #4a9ede;
+  --sky-light: #6fb5e8;
+  --sky-pale: #d6edf9;
+  --sky-ghost: #f0f8fd;
+  --navy: #1a3f6f;
+  --navy-mid: #2a5fa0;
+  --gold: #f0b429;
+  --gold-light: #ffd166;
+  --white: #ffffff;
+  --text: #1a2e4a;
+  --text-mid: #3d5a7a;
+  --text-light: #6a85a0;
+  --border: rgba(74,158,222,0.15);
+  --shadow: 0 4px 24px rgba(26,63,111,0.10);
+  --shadow-lg: 0 16px 48px rgba(26,63,111,0.16);
+  --radius: 16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Sora',sans-serif;color:var(--text);background:#fff;overflow-x:hidden;}
+
+/* TOPBAR */
+.topbar{background:var(--navy);color:rgba(255,255,255,0.85);font-size:12.5px;padding:9px 0;}
+.topbar-inner{max-width:1200px;margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.topbar-left{display:flex;gap:24px;flex-wrap:wrap;}
+.topbar-left a{color:rgba(255,255,255,0.85);text-decoration:none;display:flex;align-items:center;gap:6px;}
+.topbar-left a:hover{color:var(--gold);}
+.topbar-social{display:flex;gap:8px;}
+.topbar-social a{width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.8);text-decoration:none;font-size:12px;font-weight:600;transition:all 0.2s;}
+.topbar-social a:hover{background:var(--sky);color:#fff;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:#fff;box-shadow:0 2px 16px rgba(26,63,111,0.10);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:90px;}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo img{height:80px;width:auto;object-fit:contain;}
+.logo-icon{width:46px;height:46px;border-radius:11px;background:linear-gradient(135deg,var(--sky),var(--navy));display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.logo-name{font-size:18px;font-weight:800;color:var(--navy);line-height:1;letter-spacing:-0.3px;}
+.logo-sub{font-size:10px;color:var(--text-light);letter-spacing:0.12em;text-transform:uppercase;margin-top:3px;}
+.nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+.nav-links a{padding:8px 13px;border-radius:8px;text-decoration:none;color:var(--text-mid);font-size:13.5px;font-weight:500;transition:all 0.18s;}
+.nav-links a:hover{background:var(--sky-ghost);color:var(--sky);}
+.nav-cta{background:var(--sky);color:#fff !important;padding:10px 22px;border-radius:10px;font-weight:600;box-shadow:0 4px 14px rgba(74,158,222,0.35);transition:all 0.2s;display:inline-block;}
+.nav-cta:hover{background:var(--navy) !important;color:#fff !important;transform:translateY(-1px);box-shadow:0 6px 18px rgba(26,63,111,0.35);}
+.hamburger{display:none;cursor:pointer;flex-direction:column;gap:5px;}
+.hamburger span{width:24px;height:2px;background:var(--navy);border-radius:2px;}
+.mobile-menu{display:none;position:fixed;top:90px;left:0;right:0;background:#fff;z-index:199;padding:16px 24px;box-shadow:0 10px 30px rgba(26,63,111,0.12);flex-direction:column;gap:4px;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{padding:12px 16px;border-radius:8px;text-decoration:none;color:var(--text-mid);font-weight:500;}
+.mobile-menu .nav-cta{background:var(--sky)!important;color:#fff!important;text-align:center;margin-top:8px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 55%,#3a7fbe 100%);position:relative;overflow:hidden;padding:80px 28px 90px;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 700px 500px at 80% 50%,rgba(74,158,222,0.18) 0%,transparent 70%),radial-gradient(ellipse 400px 400px at 10% 80%,rgba(240,180,41,0.07) 0%,transparent 60%);}
+.hero-dots{position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:32px 32px;}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);backdrop-filter:blur(8px);padding:6px 16px;border-radius:100px;color:rgba(255,255,255,0.92);font-size:12.5px;font-weight:500;margin-bottom:24px;width:fit-content;}
+.hero-tag .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.4;}}
+.hero h1{font-family:'Lora',serif;font-size:clamp(34px,4.5vw,56px);font-weight:700;color:#fff;line-height:1.15;margin-bottom:20px;}
+.hero h1 em{color:var(--gold-light);font-style:normal;}
+.hero-sub{color:rgba(255,255,255,0.75);font-size:16px;line-height:1.75;margin-bottom:36px;max-width:460px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-gold{background:var(--gold);color:var(--navy);padding:14px 28px;border-radius:10px;font-weight:700;font-size:14.5px;text-decoration:none;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 20px rgba(240,180,41,0.4);}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(240,180,41,0.5);}
+.btn-ghost{border:2px solid rgba(255,255,255,0.35);color:#fff;padding:14px 28px;border-radius:10px;font-weight:500;font-size:14.5px;text-decoration:none;transition:all 0.2s;}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,0.1);}
+.hero-stats{display:flex;gap:28px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.15);}
+.hero-stat strong{font-family:'Lora',serif;font-size:30px;font-weight:700;color:var(--gold-light);display:block;}
+.hero-stat span{font-size:12px;color:rgba(255,255,255,0.6);}
+
+/* Hero right */
+.hero-right{position:relative;}
+.hero-panel{background:rgba(255,255,255,0.08);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.18);border-radius:24px;padding:32px;color:#fff;}
+.hero-panel-title{font-size:15px;font-weight:600;margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+.dest-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.dest-item{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:10px 14px;cursor:pointer;transition:all 0.2s;}
+.dest-item:hover{background:rgba(255,255,255,0.18);border-color:var(--gold);}
+.dest-flag{font-size:20px;}
+.dest-name{font-size:13.5px;font-weight:500;}
+.float-card{position:absolute;background:#fff;border-radius:14px;padding:14px 18px;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:12px;animation:floatY 3s ease-in-out infinite;}
+@keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+.float-card.top{top:-18px;right:-16px;animation-delay:0s;}
+.float-card.bot{bottom:-18px;left:-16px;animation-delay:1.5s;background:var(--gold);}
+.float-icon{width:38px;height:38px;border-radius:9px;background:var(--sky-ghost);display:flex;align-items:center;justify-content:center;font-size:18px;}
+.float-card.bot .float-icon{background:rgba(255,255,255,0.3);}
+.float-strong{font-size:13px;font-weight:700;color:var(--navy);display:block;}
+.float-sub{font-size:11px;color:var(--text-light);}
+.float-card.bot .float-sub{color:rgba(26,63,111,0.7);}
+.float-big{font-family:'Lora',serif;font-size:22px;font-weight:700;color:var(--navy);}
+
+/* SHARED */
+section{padding:88px 28px;}
+.container{max-width:1200px;margin:0 auto;}
+.sec-label{display:inline-flex;align-items:center;gap:8px;background:var(--sky-pale);color:var(--sky);font-size:11.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:14px;}
+.sec-label::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--sky);}
+.sec-title{font-family:'Lora',serif;font-size:clamp(26px,3.5vw,40px);font-weight:700;color:var(--navy);line-height:1.22;margin-bottom:14px;}
+.sec-sub{color:var(--text-light);font-size:15.5px;line-height:1.72;max-width:560px;}
+.tc{text-align:center;}
+.tc .sec-sub{margin:0 auto;}
+
+/* SERVICES STRIP */
+.services-strip{background:var(--sky-ghost);padding:22px 28px;border-bottom:1px solid var(--border);}
+.strip-inner{max-width:1200px;margin:0 auto;display:flex;gap:0;flex-wrap:wrap;}
+.strip-item{flex:1 1 160px;display:flex;align-items:center;gap:10px;padding:12px 20px;border-right:1px solid var(--border);color:var(--navy);font-size:13px;font-weight:500;cursor:pointer;transition:color 0.2s;}
+.strip-item:last-child{border-right:none;}
+.strip-item:hover{color:var(--sky);}
+.strip-item .si{font-size:20px;}
+
+/* ABOUT */
+.about{background:#fff;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.about-visual{position:relative;}
+.about-img{border-radius:20px;height:440px;overflow:hidden;background:linear-gradient(135deg,var(--sky-pale),#c8e6f8);display:flex;align-items:center;justify-content:center;}
+.about-img img{width:100%;height:100%;object-fit:cover;}
+.about-badge{position:absolute;bottom:-20px;right:-20px;background:#fff;border-radius:14px;padding:18px 22px;box-shadow:var(--shadow-lg);text-align:center;}
+.about-badge strong{font-family:'Lora',serif;font-size:30px;color:var(--navy);display:block;}
+.about-badge span{font-size:12px;color:var(--text-light);}
+.about-points{margin:28px 0 32px;display:flex;flex-direction:column;gap:14px;}
+.about-point{display:flex;align-items:flex-start;gap:14px;padding:16px 18px;background:var(--sky-ghost);border-radius:12px;border-left:3px solid var(--sky);transition:box-shadow 0.2s;}
+.about-point:hover{box-shadow:var(--shadow);}
+.ap-icon{font-size:20px;flex-shrink:0;margin-top:1px;}
+.ap-title{font-size:13.5px;font-weight:600;color:var(--navy);margin-bottom:2px;}
+.ap-desc{font-size:12.5px;color:var(--text-light);line-height:1.55;}
+
+/* SERVICES */
+.services{background:var(--sky-ghost);}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:52px;}
+.svc-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:30px 26px;text-align:center;transition:all 0.3s;position:relative;overflow:hidden;cursor:pointer;}
+.svc-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--sky),var(--navy));opacity:0;transition:opacity 0.3s;}
+.svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+.svc-card:hover::after{opacity:1;}
+.svc-card>*{position:relative;z-index:1;}
+.svc-card:hover h3,.svc-card:hover p{color:#fff!important;}
+.svc-card:hover .svc-icon-wrap{background:rgba(255,255,255,0.15);}
+.svc-icon-wrap{width:68px;height:68px;background:var(--sky-pale);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;transition:background 0.3s;font-size:28px;}
+.svc-card h3{font-size:16px;font-weight:600;color:var(--navy);margin-bottom:8px;transition:color 0.3s;}
+.svc-card p{font-size:13px;color:var(--text-light);line-height:1.65;transition:color 0.3s;}
+
+/* WHY US */
+.whyus{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);position:relative;overflow:hidden;}
+.whyus::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:28px 28px;}
+.whyus .sec-title{color:#fff;}
+.whyus .sec-sub{color:rgba(255,255,255,0.6);}
+.whyus .sec-label{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.9);}
+.whyus .sec-label::before{background:var(--gold);}
+.whyus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin-top:52px;position:relative;z-index:1;}
+.whyus-card{text-align:center;padding:32px 18px;border-radius:16px;border:1px solid rgba(255,255,255,0.1);transition:all 0.3s;}
+.whyus-card:hover{background:rgba(255,255,255,0.07);border-color:var(--gold);}
+.whyus-num{font-family:'Lora',serif;font-size:44px;font-weight:700;color:var(--gold);}
+.whyus-label{color:#fff;font-size:13.5px;font-weight:600;margin-top:6px;}
+.whyus-desc{color:rgba(255,255,255,0.45);font-size:12px;margin-top:4px;}
+
+/* COUNTRIES */
+.countries{background:#fff;}
+.countries-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px;margin-top:52px;}
+.country-card{border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:all 0.3s;cursor:pointer;box-shadow:0 2px 10px rgba(26,63,111,0.05);}
+.country-card:hover{transform:translateY(-6px);border-color:var(--sky);box-shadow:var(--shadow-lg);}
+.country-card-flag{width:100%;height:150px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.country-card-img{width:100%;height:150px;object-fit:cover;display:block;transition:transform 0.4s;}
+.country-card:hover .country-card-img{transform:scale(1.06);}
+.country-card:hover .country-card-flag{transform:scale(1.04);}
+.country-body{padding:16px;}
+.cflag-code{display:inline-block;background:var(--sky-pale);color:var(--sky);font-size:10px;font-weight:700;letter-spacing:0.1em;padding:2px 8px;border-radius:4px;margin-bottom:6px;}
+.country-name{color:var(--navy);font-size:15px;font-weight:600;margin-bottom:2px;}
+.country-hint{color:var(--text-light);font-size:11.5px;margin-bottom:8px;}
+.country-tags{display:flex;flex-wrap:wrap;gap:4px;}
+.ctag{background:var(--sky-ghost);color:var(--text-mid);font-size:10px;padding:2px 7px;border-radius:4px;}
+
+/* VISA CATEGORIES */
+.visa-cats{background:var(--sky-ghost);}
+.visa-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.visa-list{display:flex;flex-direction:column;gap:20px;margin-top:32px;}
+.visa-item{display:flex;align-items:flex-start;gap:18px;background:#fff;border-radius:14px;padding:22px 20px;box-shadow:0 2px 12px rgba(26,63,111,0.07);border:1px solid var(--border);transition:transform 0.2s,box-shadow 0.2s;}
+.visa-item:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
+.visa-num{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;flex-shrink:0;}
+.visa-content h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.visa-content p{font-size:13px;color:var(--text-light);line-height:1.65;}
+.visa-right{position:relative;display:flex;align-items:center;justify-content:center;}
+.visa-img-stack{position:relative;width:100%;max-width:380px;height:380px;}
+.visa-img-bg{position:absolute;top:24px;left:24px;right:-24px;bottom:-24px;background:var(--sky-pale);border-radius:20px;}
+.visa-img-front{position:absolute;inset:0;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);}
+.visa-img-front img{width:100%;height:100%;object-fit:cover;}
+
+/* PARTNER UNIVERSITIES */
+.partners{background:#fff;}
+.partners-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:48px;}
+.partner-card{background:var(--sky-ghost);border:1px solid var(--border);border-radius:16px;padding:28px 20px;text-align:center;transition:all 0.3s;cursor:default;}
+.partner-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--sky);background:#fff;}
+.partner-logo{font-size:36px;margin-bottom:12px;height:70px;display:flex;align-items:center;justify-content:center;}
+.partner-name{font-size:13px;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:8px;}
+.partner-country{font-size:12px;color:var(--text-light);}
+
+@media(max-width:900px){
+  .visa-inner{grid-template-columns:1fr;}
+  .visa-right{display:none;}
+}
+
+/* COACHING */
+.coaching{background:var(--sky-ghost);}
+.coaching-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:52px;}
+.coaching-card{background:#fff;border-radius:20px;padding:36px;box-shadow:var(--shadow);display:flex;gap:22px;align-items:flex-start;transition:transform 0.3s;}
+.coaching-card:hover{transform:translateY(-4px);}
+.coaching-badge{width:58px;height:58px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;flex-shrink:0;font-family:'Lora',serif;}
+.cb-blue{background:var(--sky-pale);color:var(--sky);}
+.cb-gold{background:#fff8e0;color:#c88a00;}
+.coaching-card h3{font-size:19px;font-weight:700;color:var(--navy);margin-bottom:8px;}
+.coaching-card p{font-size:13.5px;color:var(--text-light);line-height:1.65;margin-bottom:16px;}
+.coaching-tags{display:flex;flex-wrap:wrap;gap:7px;}
+.ctag-blue{background:var(--sky-ghost);color:var(--sky);font-size:11.5px;font-weight:500;padding:4px 10px;border-radius:6px;}
+
+/* PROCESS */
+.process{background:#fff;}
+.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0;margin-top:52px;position:relative;}
+.process-steps::before{content:'';position:absolute;top:44px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,var(--sky-pale),var(--sky),var(--sky-pale));z-index:0;}
+.step{text-align:center;padding:0 16px;position:relative;z-index:1;}
+.step-num{width:48px;height:48px;border-radius:50%;background:var(--sky);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;margin:0 auto 16px;box-shadow:0 4px 16px rgba(74,158,222,0.4);position:relative;z-index:1;}
+.step-icon{font-size:22px;margin-bottom:8px;}
+.step h4{font-size:13.5px;font-weight:600;color:var(--navy);margin-bottom:6px;}
+.step p{font-size:12px;color:var(--text-light);line-height:1.55;}
+
+/* TESTIMONIALS */
+.testimonials{background:var(--sky-ghost);}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;margin-top:52px;}
+.tcard{background:#fff;border:1px solid var(--border);border-radius:20px;padding:30px;box-shadow:0 4px 18px rgba(26,63,111,0.06);position:relative;transition:transform 0.3s;}
+.tcard:hover{transform:translateY(-4px);}
+.tcard::before{content:'\201C';position:absolute;top:16px;right:22px;font-family:'Lora',serif;font-size:72px;color:var(--sky-pale);line-height:1;}
+.stars{color:var(--gold);font-size:15px;margin-bottom:14px;letter-spacing:2px;}
+.ttext{font-size:13.5px;color:var(--text-mid);line-height:1.75;margin-bottom:22px;font-style:italic;}
+.tauthor{display:flex;align-items:center;gap:12px;}
+.tavatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--navy));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;flex-shrink:0;}
+.tname{font-weight:600;color:var(--navy);font-size:13.5px;}
+.tdest{font-size:11.5px;color:var(--text-light);margin-top:2px;}
+
+/* CONDUCT */
+.conduct{background:#fff;}
+.conduct-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:52px;}
+.conduct-item{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;background:var(--sky-ghost);border-radius:12px;border-left:3px solid var(--sky);transition:box-shadow 0.2s;}
+.conduct-item:hover{box-shadow:var(--shadow);}
+.cnum{width:28px;height:28px;border-radius:50%;background:var(--sky);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+.conduct-item p{font-size:13.5px;color:var(--text-mid);line-height:1.6;}
+
+/* CONTACT */
+.contact{background:var(--sky-ghost);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:52px;}
+.contact-info{display:flex;flex-direction:column;gap:16px;}
+.cinfo-item{display:flex;align-items:flex-start;gap:16px;padding:20px;background:#fff;border-radius:14px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(26,63,111,0.05);}
+.cinfo-icon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.cinfo-label{font-size:11px;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;}
+.cinfo-val{font-size:15px;color:var(--navy);font-weight:500;}
+.cinfo-val a{color:var(--navy);text-decoration:none;}
+.cinfo-val a:hover{color:var(--sky);}
+.contact-form{background:#fff;border-radius:20px;padding:36px;box-shadow:var(--shadow-lg);border:1px solid var(--border);}
+.contact-form h3{font-family:'Lora',serif;font-size:22px;color:var(--navy);margin-bottom:24px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.fgroup{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.fgroup label{font-size:12px;font-weight:600;color:var(--text-mid);}
+.fgroup input,.fgroup select,.fgroup textarea{padding:12px 14px;border:1.5px solid var(--border);border-radius:10px;font-family:'Sora',sans-serif;font-size:13.5px;color:var(--text);outline:none;transition:border-color 0.2s;background:var(--sky-ghost);}
+.fgroup input:focus,.fgroup select:focus,.fgroup textarea:focus{border-color:var(--sky);background:#fff;}
+.fgroup textarea{resize:none;height:95px;}
+.btn-submit{width:100%;background:linear-gradient(135deg,var(--sky),var(--navy));color:#fff;border:none;padding:14px;border-radius:10px;font-size:14.5px;font-weight:600;font-family:'Sora',sans-serif;cursor:pointer;transition:all 0.2s;box-shadow:0 6px 20px rgba(74,158,222,0.3);}
+.btn-submit:hover{opacity:0.92;transform:translateY(-1px);}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,0.7);padding:60px 28px 24px;}
+.footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08);}
+.footer-brand p{font-size:13.5px;line-height:1.7;margin:16px 0;}
+.footer-logo{display:flex;align-items:center;gap:12px;}
+.footer-logo-icon{width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:20px;}
+.footer-logo-name{color:#fff;font-size:17px;font-weight:700;display:block;}
+.footer-logo-sub{color:rgba(255,255,255,0.4);font-size:10px;text-transform:uppercase;letter-spacing:0.1em;}
+.footer-social{display:flex;gap:8px;margin-top:4px;}
+.footer-social a{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.7);text-decoration:none;font-size:13px;font-weight:600;transition:all 0.2s;}
+.footer-social a:hover{background:var(--sky);color:#fff;}
+.footer-col h4{color:#fff;font-size:13.5px;font-weight:600;margin-bottom:16px;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-col a{color:rgba(255,255,255,0.58);text-decoration:none;font-size:13px;transition:color 0.2s;}
+.footer-col a:hover{color:#fff;}
+.footer-bottom{max-width:1200px;margin:20px auto 0;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;flex-wrap:wrap;gap:8px;}
+
+/* WHATSAPP */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:999;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 6px 20px rgba(37,211,102,0.5);text-decoration:none;animation:floatY 3s ease-in-out infinite;}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:40px;}
+  .hero-right{display:none;}
+  .about-grid{grid-template-columns:1fr;}
+  .about-visual{display:none;}
+  .coaching-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .process-steps::before{display:none;}
+}
+@media(max-width:600px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  section{padding:60px 16px;}
+  .hero{padding:60px 16px 72px;}
+  .hero-stats{gap:20px;}
+  .footer-grid{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  .strip-item{flex:1 1 50%;}
+}
+.fade-up{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/919996236151" class="wa-float" target="_blank" title="Chat on WhatsApp">💬</a>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <a href="tel:9996236151">📞 +91 9996236151</a>
+      <a href="director@hometowncareers.co.in">✉ <span class="__cf_email__" data-cfemail="4f2e252e362d2a2126382e23612e202c280f28222e2623612c2022">director@hometowncareers.co.in</span></a>
+      <a href="#">📍 Behind Bus Stand, Peer Wali Gali, Ladwa, Kurukshetra</a>
+    </div>
+    <div class="topbar-social">
+      <a href="#" title="Facebook">f</a>
+      <a href="https://www.instagram.com/hometowncareers_ladwa?igsh=MXFkaDlzcTJyOGVhMw==" title="Instagram">ig </a>
+      <a href="https://wa.me/919996236151" title="WhatsApp">w</a>
+      <a href="mailto:director@hometowncareers.co.in">m</a>
+  
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <img src="logo.png" alt="Hometown Career" onerror="this.style.display='none';document.getElementById('logoIcon').style.display='flex'">
+      <div class="logo-icon" id="logoIcon" style="display:none;">✈️</div>
+      <div>
+        <div class="logo-name">Hometown Career Private Limited </div>
+        <div class="logo-sub"></div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#countries">Countries</a></li>
+      <li><a href="#visa">Visa</a></li>
+      <li><a href="#partners">Universities</a></li>
+      <li><a href="#coaching">Coaching</a></li>
+      <li><a href="#conduct">Code of Conduct</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact" class="nav-cta">Free Counselling</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#countries" onclick="toggleMenu()">Countries</a>
+  <a href="#coaching" onclick="toggleMenu()">Coaching</a>
+  <a href="#conduct" onclick="toggleMenu()">Code of Conduct</a>
+  <a href="#testimonials" onclick="toggleMenu()">Reviews</a>
+  <a href="#contact" class="nav-cta" onclick="toggleMenu()">Free Counselling →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-dots"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag"><span class="dot"></span> India's Trusted Study Abroad Partner</div>
+      <h1>Your Dream of<br><em>Studying Abroad</em><br>Starts Here</h1>
+      <p class="hero-sub">Expert guidance for IELTS & PTE coaching, university admissions, visa assistance, and everything in between — backed by 7 years of proven success.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-gold">Get Free Counselling →</a>
+        <a href="#services" class="btn-ghost">Our Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>1000+</strong><span>Students Placed</span></div>
+        <div class="hero-stat"><strong>5+</strong><span>Countries</span></div>
+        <div class="hero-stat"><strong>98%</strong><span>Visa Success</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div style="position:relative;padding:20px;">
+        <div class="float-card top">
+          <div class="float-icon">🎓</div>
+          <div><strong class="float-strong">Expert Guidance</strong><span class="float-sub">7 Years Strong</span></div>
+        </div>
+        <div class="hero-panel">
+          <div class="hero-panel-title">🌍 We Help You Reach</div>
+          <div class="dest-grid">
+            <div class="dest-item"><span class="dest-flag">🇺🇸</span><span class="dest-name">USA</span></div>
+            <div class="dest-item"><span class="dest-flag">🇨🇦</span><span class="dest-name">Canada</span></div>
+            <div class="dest-item"><span class="dest-flag">🇬🇧</span><span class="dest-name">UK</span></div>
+            <div class="dest-item"><span class="dest-flag">🇦🇺</span><span class="dest-name">Australia</span></div>
+            <div class="dest-item"><span class="dest-flag">🇪🇺</span><span class="dest-name">Schengen</span></div>
+            <div class="dest-item"><span class="dest-flag">✈️</span><span class="dest-name">& More...</span></div>
+          </div>
+        </div>
+        <div class="float-card bot">
+          <div class="float-icon">🌟</div>
+          <div><span class="float-big">1000+</span><span class="float-sub">Happy Students</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="services-strip">
+  <div class="strip-inner">
+    <div class="strip-item"><span class="si">🧭</span> Career Counseling</div>
+    <div class="strip-item"><span class="si">🏛️</span> University Selection</div>
+    <div class="strip-item"><span class="si">📝</span> SOP / LOR Help</div>
+    <div class="strip-item"><span class="si">🛂</span> Visa Assistance</div>
+    <div class="strip-item"><span class="si">📋</span> Application Filing</div>
+    <div class="strip-item"><span class="si">🎓</span> IELTS & PTE Coaching</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-img">
+          <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80" alt="Students studying abroad" onerror="this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80'">
+        </div>
+        <div class="about-badge"><strong>7 Years</strong><span>of Experience</span></div>
+      </div>
+      <div>
+        <div class="sec-label">About Us</div>
+        <h2 class="sec-title">Guiding Students to Global Opportunities</h2>
+        <p class="sec-sub">Hometown Career Private Limited is a leading study abroad consultancy and IELTS & PTE coaching institute based in Ladwa, Kurukshetra. With 7 years of experience, we are committed to making international education accessible to every deserving student in India.</p>
+        <div class="about-points">
+          <div class="about-point"><span class="ap-icon">🎯</span><div><div class="ap-title">Personalized Career Mapping</div><div class="ap-desc">We assess your strengths, goals, and budget to craft the perfect study-abroad roadmap just for you.</div></div></div>
+          <div class="about-point"><span class="ap-icon">🏫</span><div><div class="ap-title">Certified IELTS & PTE Coaching</div><div class="ap-desc">Expert trainers with a proven track record of helping students achieve their target band scores.</div></div></div>
+          <div class="about-point"><span class="ap-icon">✅</span><div><div class="ap-title">End-to-End Visa Support</div><div class="ap-desc">From documentation to interview prep — we handle the entire visa process so you don't have to worry.</div></div></div>
+        </div>
+        <a href="#contact" class="btn-gold" style="width:fit-content;">Talk to an Expert →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="tc">
+      <div class="sec-label">What We Offer</div>
+      <h2 class="sec-title">Our Services</h2>
+      <p class="sec-sub">Everything you need to make your international education dream come true — under one roof.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card"><div class="svc-icon-wrap">🧭</div><h3>Career Counseling</h3><p>In-depth one-on-one sessions to help you choose the right course, country, and career path based on your profile.</p></div>
+      <div class="svc-card"><div class="svc-icon-wrap">🏛️</div><h3>University Selection</h3><p>We shortlist the best universities that match your academic profile, budget, and career aspirations across the globe.</p></div>
+      <div class="svc-card"><div class="svc-icon-wrap">📝</div><h3>SOP / LOR Help</h3><p>Professionally crafted Statements of Purpose and Letters of Recommendation that make your application stand out.</p></div>
+      <div class="svc-card"><div class="svc-icon-wrap">🛂</div><h3>Visa Assistance</h3><p>Complete visa documentation, application filing, and interview coaching to maximize your visa approval chances.</p></div>
+      <div class="svc-card"><div class="svc-icon-wrap">📋</div><h3>Application Filing</h3><p>We handle the complete university application process — from form filling to submission, on time, every time.</p></div>
+      <div class="svc-card"><div class="svc-icon-wrap">🤝</div><h3>Pre-Departure Briefing</h3><p>Comprehensive pre-departure orientation covering accommodation, banking, culture, and safety tips abroad.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="whyus">
+  <div class="container">
+    <div class="tc">
+      <div class="sec-label">Why Choose Us</div>
+      <h2 class="sec-title">Numbers That Speak for Themselves</h2>
+      <p class="sec-sub">We have earned the trust of hundreds of families across Haryana with consistent results.</p>
+    </div>
+    <div class="whyus-grid">
+      <div class="whyus-card"><div class="whyus-num">1000+</div><div class="whyus-label">Students Placed</div><div class="whyus-desc">Across top universities globally</div></div>
+      <div class="whyus-card"><div class="whyus-num">98%</div><div class="whyus-label">Visa Success Rate</div><div class="whyus-desc">Industry-leading approval rate</div></div>
+      <div class="whyus-card"><div class="whyus-num">7+</div><div class="whyus-label">Years Experience</div><div class="whyus-desc">Trusted experts since 2018</div></div>
+      <div class="whyus-card"><div class="whyus-num">5</div><div class="whyus-label">Countries</div><div class="whyus-desc">USA, Canada, UK, AU & EU</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTRIES -->
+<section class="countries" id="countries">
+  <div class="container">
+    <div class="tc">
+      <div class="sec-label">Destinations</div>
+      <h2 class="sec-title">Countries We Cover</h2>
+      <p class="sec-sub">Deep expertise in placements across the world's top study destinations.</p>
+    </div>
+    <div class="countries-grid">
+      <div class="country-card">
+        <div class="country-card-flag" style="overflow:hidden;">
+          <img class="country-card-img" src="https://flagcdn.com/w320/us.png" alt="USA Flag">
+        </div>
+        <div class="country-body"><span class="cflag-code">🇺🇸 US</span><div class="country-name">USA</div><div class="country-hint">World-class universities</div><div class="country-tags"><span class="ctag">MIT</span><span class="ctag">Harvard</span><span class="ctag">Stanford</span></div></div>
+      </div>
+      <div class="country-card">
+        <div class="country-card-flag" style="overflow:hidden;">
+          <img class="country-card-img" src="https://flagcdn.com/w320/ca.png" alt="Canada Flag">
+        </div>
+        <div class="country-body"><span class="cflag-code">🇨🇦 CA</span><div class="country-name">Canada</div><div class="country-hint">PR-friendly pathways</div><div class="country-tags"><span class="ctag">UofT</span><span class="ctag">UBC</span><span class="ctag">McGill</span></div></div>
+      </div>
+      <div class="country-card">
+        <div class="country-card-flag" style="overflow:hidden;">
+          <img class="country-card-img" src="https://flagcdn.com/w320/gb.png" alt="UK Flag">
+        </div>
+        <div class="country-body"><span class="cflag-code">🇬🇧 GB</span><div class="country-name">United Kingdom</div><div class="country-hint">Historic excellence</div><div class="country-tags"><span class="ctag">Oxford</span><span class="ctag">Cambridge</span><span class="ctag">Imperial</span></div></div>
+      </div>
+      <div class="country-card">
+        <div class="country-card-flag" style="overflow:hidden;">
+          <img class="country-card-img" src="https://flagcdn.com/w320/au.png" alt="Australia Flag">
+        </div>
+        <div class="country-body"><span class="cflag-code">🇦🇺 AU</span><div class="country-name">Australia</div><div class="country-hint">Work while you study</div><div class="country-tags"><span class="ctag">ANU</span><span class="ctag">UniMelb</span><span class="ctag">UNSW</span></div></div>
+      </div>
+      <div class="country-card">
+        <div class="country-card-flag" style="overflow:hidden;">
+          <img class="country-card-img" src="https://flagcdn.com/w320/eu.png" alt="EU Flag">
+        </div>
+        <div class="country-body"><span class="cflag-code">🇪🇺 EU</span><div class="country-name">Schengen Region</div><div class="country-hint">Europe's best institutes</div><div class="country-tags"><span class="ctag">TU Munich</span><span class="ctag">ETH Zürich</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISA CATEGORIES -->
+<section class="visa-cats" id="visa">
+  <div class="container">
+    <div class="visa-inner">
+      <div class="visa-left">
+        <div class="sec-label">Visa Category</div>
+        <h2 class="sec-title">Explore Our Global Visa Solutions</h2>
+        <div class="visa-list">
+          <div class="visa-item">
+            <div class="visa-num" style="background:#f59e0b;">1</div>
+            <div class="visa-content">
+              <h3>Student Visa</h3>
+              <p>Embark on an educational adventure abroad, enhancing your knowledge while experiencing new cultures and becoming a global citizen.</p>
+            </div>
+          </div>
+          <div class="visa-item">
+            <div class="visa-num" style="background:#10b981;">2</div>
+            <div class="visa-content">
+              <h3>Work Visa</h3>
+              <p>Unlock professional growth and gain international experience while immersing yourself in new cultures and expanding your global network.</p>
+            </div>
+          </div>
+          <div class="visa-item">
+            <div class="visa-num" style="background:#3b82f6;">3</div>
+            <div class="visa-content">
+              <h3>Tourist Visa</h3>
+              <p>Turn your travel dreams into reality with unforgettable experiences, from exploring new destinations to indulging in diverse cultures and activities.</p>
+            </div>
+          </div>
+          <div class="visa-item">
+            <div class="visa-num" style="background:#8b5cf6;">4</div>
+            <div class="visa-content">
+              <h3>Permanent Residency</h3>
+              <p>Build a new life abroad with the chance to settle, advance your career, and become a valued member of a new community.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="visa-right">
+        <div class="visa-img-stack">
+          <div class="visa-img-bg"></div>
+          <div class="visa-img-front">
+            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&q=80" alt="Travel" onerror="this.style.background='linear-gradient(135deg,var(--sky-pale),var(--sky))'">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER UNIVERSITIES -->
+<section class="partners" id="partners">
+  <div class="container">
+    <div class="tc">
+      <div class="sec-label">Our Partners</div>
+      <h2 class="sec-title">We're proud to work with our preferred partners</h2>
+      <p class="sec-sub">We have direct tie-ups with reputed universities and institutions across the globe to give you the best opportunities.</p>
+    </div>
+    <div class="partners-grid">
+      <div class="partner-card"><div class="partner-logo"><img src="https://stu.ca/media/stu/site-assets/images/logo-and-icons/STU-logo_green-2-01.png" alt="St. Thomas University" style="height:60px;width:auto;object-fit:contain;" onerror="this.outerHTML='🎓'"></div><div class="partner-name">St. Thomas University</div><div class="partner-country">🇨🇦 Canada</div></div>
+      <div class="partner-card"><div class="partner-logo"><img src="https://bheuni.io/university-details/wrexham-university" target="_blank"><img src="https://vtlogo.com/wp-content/uploads/2021/08/wrexham-glyndwr-university-vector-logo.png" alt="Wrexham Glyndwr University" style="height:60px;width:auto;object-fit:contain;" onerror="this.outerHTML='🏛️'"></div><div class="partner-name">Wrexham Glyndŵr University</div><div class="partner-country">🇬🇧 UK</div></div>
+      <div class="partner-card"><div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/3/36/UWL-Logo.png" alt="University of West London" style="height:60px;width:auto;object-fit:contain;" onerror="this.outerHTML='🎓'"></div><div class="partner-name">University of West London</div><div class="partner-country">🇬🇧 UK</div></div>
+      <div class="partner-card"><div class="partner-logo"><img src="https://original.fontsinuse.com/fontsinuse.com/use-images/N187/187299/187299.png" alt="Middlesex University London" style="height:60px;width:auto;object-fit:contain;" onerror="this.outerHTML='🏛️'"></div><div class="partner-name">Middlesex University London</div><div class="partner-country">🇬🇧 UK</div></div>
+      <div class="partner-card"><div class="partner-logo"><img src="https://landmarkedu.com/image-cache/Screenshot_2024_10_28_072205-1730079501.png?p=1200&s=5fbef81d98ff8c96277043edfaa51231" alt="University of Winchester" style="height:60px;width:auto;object-fit:contain;" onerror="this.outerHTML='🎓'"></div><div class="partner-name">University of Winchester</div><div class="partner-country">🇬🇧 UK</div></div>
+      <div class="partner-card"><div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/UWE_Bristol_logo.svg/330px-UWE_Bristol_logo.svg.png?_=20180412070255" alt="UWE Bristol" style="height:60px;width:auto;object-fit:contain;" onerror="this.outerHTML='🏛️'"></div><div class="partner-name">UWE Bristol</div><div class="partner-country">🇬🇧 UK</div></div>
+      <div class="partner-card"><div class="partner-logo"><img src="https://australiancentre.com.br/wp-content/uploads/2018/04/48304418_eca_new-logo.png" alt="ECA Australia" style="height:60px;width:auto;object-fit:contain;" onerror="this.outerHTML='🎓'"></div><div class="partner-name">ECA – Education Centre of Australia</div><div class="partner-country">🇦🇺 Australia</div></div>
+      <div class="partner-card"><div class="partner-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Conestoga_College_logo.png?_=20140404001825" alt="Conestoga College" style="height:60px;width:auto;object-fit:contain;" onerror="this.outerHTML='🏛️'"></div><div class="partner-name">Conestoga College</div><div class="partner-country">🇨🇦 Canada</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COACHING -->
+<section class="coaching" id="coaching">
+  <div class="container">
+    <div class="tc">
+      <div class="sec-label">Test Preparation</div>
+      <h2 class="sec-title">IELTS & PTE Coaching</h2>
+      <p class="sec-sub">Get trained by certified experts and achieve your target band score with our structured programs.</p>
+    </div>
+    <div class="coaching-grid">
+      <div class="coaching-card">
+        <div class="coaching-badge cb-blue">IE</div>
+        <div>
+          <h3>IELTS Coaching</h3>
+          <p>Comprehensive IELTS preparation covering all four modules — Listening, Reading, Writing, and Speaking — with mock tests and personalized feedback.</p>
+          <div class="coaching-tags"><span class="ctag-blue">Certified Trainers</span><span class="ctag-blue">Daily Practice Tests</span><span class="ctag-blue">Speaking Lab</span><span class="ctag-blue">Flexible Batches</span></div>
+        </div>
+      </div>
+      <div class="coaching-card">
+        <div class="coaching-badge cb-gold">PT</div>
+        <div>
+          <h3>PTE Coaching</h3>
+          <p>AI-powered PTE Academic preparation with full-length timed tests, section-wise strategy building, and score improvement tracking.</p>
+          <div class="coaching-tags"><span class="ctag-blue">AI Practice Tools</span><span class="ctag-blue">Score Prediction</span><span class="ctag-blue">Weekend Batches</span><span class="ctag-blue">Crash Course</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="container">
+    <div class="tc">
+      <div class="sec-label">How It Works</div>
+      <h2 class="sec-title">Your Journey, Step by Step</h2>
+      <p class="sec-sub">A simple, transparent process designed to take you from dream to destination.</p>
+    </div>
+    <div class="process-steps">
+      <div class="step"><div class="step-num">1</div><div class="step-icon">💬</div><h4>Free Counselling</h4><p>Book a free session with our expert counsellors to discuss your goals and options.</p></div>
+      <div class="step"><div class="step-num">2</div><div class="step-icon">🎯</div><h4>Profile Assessment</h4><p>We evaluate your academic background, budget, and career goals to find the best fit.</p></div>
+      <div class="step"><div class="step-num">3</div><div class="step-icon">🏛️</div><h4>University Shortlisting</h4><p>Get a curated list of universities and programs that match your profile perfectly.</p></div>
+      <div class="step"><div class="step-num">4</div><div class="step-icon">📝</div><h4>Application & Docs</h4><p>We prepare your SOP, LOR, and all documents and file your applications.</p></div>
+      <div class="step"><div class="step-num">5</div><div class="step-icon">🛂</div><h4>Visa & Departure</h4><p>Complete visa guidance and pre-departure briefing to set you up for success.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="tc">
+      <div class="sec-label">Student Stories</div>
+      <h2 class="sec-title">What Our Students Say</h2>
+      <p class="sec-sub">Real experiences from real students who trusted Hometown Career with their future.</p>
+    </div>
+    <div class="tgrid">
+      <div class="tcard"><div class="stars">★★★★★</div><p class="ttext">Hometown Career made my dream of studying in Canada a reality. From IELTS coaching to visa approval, they were with me at every step. The team is knowledgeable, patient, and genuinely cares about your success!</p><div class="tauthor"><div class="tavatar">HK</div><div><div class="tname">Harsh Kumar</div><div class="tdest">🇨🇦 Studying in Canada</div></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p class="ttext">The IELTS coaching at Hometown Career is top-notch. My speaking score improved by 1.5 bands in just two months. They also helped with my SOP for UK universities and I got admission in my first choice!</p><div class="tauthor"><div class="tavatar">MO</div><div><div class="tname">Mohit</div><div class="tdest">🇬🇧 Studying in UK</div></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p class="ttext">After one counselling session, everything became clear. Their guidance helped me secure admission to a top Australian university with a partial scholarship. I couldn't be more grateful!</p><div class="tauthor"><div class="tavatar">KA</div><div><div class="tname">Kamal</div><div class="tdest">🇦🇺 Studying in Australia</div></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p class="ttext">Hometown Career helped me crack my PTE exam in the very first attempt with a score of 79+. The trainers are incredibly skilled. Within months I had my US student visa in hand. Best decision ever!</p><div class="tauthor"><div class="tavatar">RO</div><div><div class="tname">Rohit</div><div class="tdest">🇺🇸 Studying in USA</div></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p class="ttext">I had tried other consultancies before but Hometown Career is a completely different level. They guided me through every document for my Canada visa and it got approved in record time. Truly professional!</p><div class="tauthor"><div class="tavatar">SP</div><div><div class="tname">Sparsh</div><div class="tdest">🇨🇦 Studying in Canada</div></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p class="ttext">From the very first free counselling session I knew this was the right choice. The whole team supported me at every step — IELTS prep, university shortlisting, SOP writing and visa. Now studying in the UK!</p><div class="tauthor"><div class="tavatar">MK</div><div><div class="tname">Manik</div><div class="tdest">🇬🇧 Studying in UK</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CODE OF CONDUCT -->
+<section class="conduct" id="conduct">
+  <div class="container">
+    <div class="tc">
+      <div class="sec-label">Transparency & Trust</div>
+      <h2 class="sec-title">Our Code of Conduct</h2>
+      <p class="sec-sub">We operate with full transparency, integrity, and respect for every student. Here's our commitment to you.</p>
+    </div>
+    <div class="conduct-grid">
+      <div class="conduct-item"><div class="cnum">1</div><p><strong>Honest Counselling:</strong> We provide truthful, unbiased guidance about courses, universities, and visa prospects — with no false promises or misleading claims.</p></div>
+      <div class="conduct-item"><div class="cnum">2</div><p><strong>Data Privacy:</strong> All personal information shared by students is strictly confidential and never shared with third parties without consent.</p></div>
+      <div class="conduct-item"><div class="cnum">3</div><p><strong>No Hidden Charges:</strong> All fees and charges are communicated clearly upfront. We do not levy any hidden or surprise costs at any stage.</p></div>
+      <div class="conduct-item"><div class="cnum">4</div><p><strong>Ethical Documentation:</strong> We strictly prohibit falsification of any academic or personal documents and will not assist in any fraudulent application.</p></div>
+      <div class="conduct-item"><div class="cnum">5</div><p><strong>Respectful Service:</strong> Every student is treated with dignity and respect, regardless of academic background, gender, caste, or religion.</p></div>
+      <div class="conduct-item"><div class="cnum">6</div><p><strong>Timely Communication:</strong> We commit to responding to all queries within 24 hours and keeping students updated at every stage of their application.</p></div>
+      <div class="conduct-item"><div class="cnum">7</div><p><strong>Student-First Approach:</strong> Our recommendations are always in the best interest of the student's career and future, not driven by commissions or partnerships.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="tc">
+      <div class="sec-label">Get In Touch</div>
+      <h2 class="sec-title">Start Your Journey Today</h2>
+      <p class="sec-sub">Book a free counselling session and let our experts guide you towards the right path.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="cinfo-item"><span class="cinfo-icon">📞</span><div><div class="cinfo-label">Phone</div><div class="cinfo-val"><a href="tel:9996236151">+91 9996236151</a></div></div></div>
+        <div class="cinfo-item"><span class="cinfo-icon">✉️</span><div><div class="cinfo-label">Email</div><div class="cinfo-val"><a href="/cdn-cgi/l/email-protection#bedfd4dfc7dcdbd0d7c9dfd290dfd1ddd9fed9d3dfd7d290ddd1d3"><span class="__cf_email__" data-cfemail="4c2d262d352e2922253b2d20622d232f2b0c2b212d2520622f2321">director@hometowncareers.co.in</span></a></div></div></div>
+        <div class="cinfo-item"><span class="cinfo-icon">📍</span><div><div class="cinfo-label">Address</div><div class="cinfo-val">Behind Bus Stand, Peer Wali Gali, Ladwa, Kurukshetra, Haryana</div></div></div>
+        <div class="cinfo-item"><span class="cinfo-icon">🕐</span><div><div class="cinfo-label">Office Hours</div><div class="cinfo-val">Mon – Sat: 9:00 AM – 7:00 PM<br>Sunday: By Appointment</div></div></div>
+        <div class="cinfo-item"><span class="cinfo-icon">💬</span><div><div class="cinfo-label">WhatsApp</div><div class="cinfo-val"><a href="https://wa.me/919996236151">Chat with us on WhatsApp</a></div></div></div>
+      </div>
+      <div class="contact-form">
+        <h3>Book Free Counselling</h3>
+        <div class="form-row">
+          <div class="fgroup"><label>First Name *</label><input type="text" placeholder="Your first name"></div>
+          <div class="fgroup"><label>Last Name</label><input type="text" placeholder="Your last name"></div>
+        </div>
+        <div class="fgroup"><label>Phone Number *</label><input type="tel" placeholder="+91 XXXXXXXXXX"></div>
+        <div class="fgroup"><label>Email Address</label><input type="email" placeholder="you@email.com"></div>
+        <div class="form-row">
+          <div class="fgroup"><label>Preferred Country</label><select><option value="">Select country</option><option>USA</option><option>Canada</option><option>United Kingdom</option><option>Australia</option><option>Schengen Region</option></select></div>
+          <div class="fgroup"><label>Service Needed</label><select><option value="">Select a service</option><option>Career Counseling</option><option>University Selection</option><option>IELTS Coaching</option><option>PTE Coaching</option><option>Visa Assistance</option><option>SOP / LOR Help</option></select></div>
+        </div>
+        <div class="fgroup"><label>Message (Optional)</label><textarea placeholder="Tell us about your goals or any questions you have..."></textarea></div>
+        <button class="btn-submit" onclick="handleSubmit(this)">Submit Enquiry →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="logo.png" alt="Hometown Career Private Limited" style="height:64px;width:auto;object-fit:contain;background:#fff;border-radius:10px;padding:4px;" onerror="this.style.display='none';document.getElementById('footerLogoFallback').style.display='flex'">
+        <div id="footerLogoFallback" style="display:none;">
+          <div class="footer-logo-icon">✈️</div>
+          <div><span class="logo.png">Hometown Career Private Limited </span><span class="footer-logo-sub"></span></div>
+        </div>
+        <div style="margin-left:10px;"><span class="logo.png">Hometown Career Private Limited</span><span class="footer-logo-sub"></span></div>
+      </div>
+      <p>Your trusted partner for study abroad counselling, IELTS & PTE coaching, and complete visa assistance. Based in Ladwa, Kurukshetra — serving students across Haryana and beyond.</p>
+      <div class="footer-social">
+        <a href="#">f</a><a href="#">in</a><a href="#">ig</a><a href="#">yt</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Career Counseling</a></li>
+        <li><a href="#services">University Selection</a></li>
+        <li><a href="#services">SOP / LOR Help</a></li>
+        <li><a href="#services">Visa Assistance</a></li>
+        <li><a href="#coaching">IELTS Coaching</a></li>
+        <li><a href="#coaching">PTE Coaching</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Destinations</h4>
+      <ul>
+        <li><a href="#countries">USA</a></li>
+        <li><a href="#countries">Canada</a></li>
+        <li><a href="#countries">United Kingdom</a></li>
+        <li><a href="#countries">Australia</a></li>
+        <li><a href="#countries">Schengen Region</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#conduct">Code of Conduct</a></li>
+        <li><a href="#testimonials">Student Reviews</a></li>
+        <li><a href="tel:9996236151">+91 999623
